@@ -1,0 +1,11 @@
+{
+	"logLevel": "info",
+	"serverPort": 20000,
+	"serverType": "tcp",
+	"world": [
+		"127.0.0.1:2619"
+	],
+	"game": [
+		"127.0.0.1:2620"
+	]
+}

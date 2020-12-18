@@ -1,0 +1,31 @@
+syntax = "proto3";
+package gwpb;
+option go_package = ".;pb";
+
+enum GWMsgEnum{
+	world  = 0;
+	game   = 1;
+}
+//根据gwMsgType和router来路由消息
+message GWMsgRequest {
+	GWMsgEnum gwMsgType =1;	
+	string    router    =2;
+	bytes     msgData   =3; //转发的消息
+}
+
+
+message GWMsgRetCode {
+  enum RetCode {
+	RetCode_OK            =0;
+	RetCode_Err           =1;
+	RetCode_GWMsgEnumErr  =2;
+	RetCode_RouterErr     =3;
+  }
+}
+
+//gateway返回消息
+message GWMsgResponse {
+	GWMsgEnum     gwMsgType =1;	
+	GWMsgRetCode  RetCode   =2;
+	bytes         msgData   =3;//具体返回的消息
+}
