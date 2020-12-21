@@ -1,5 +1,5 @@
 syntax = "proto3";
-package gwpb;
+package pb;
 option go_package = ".;pb";
 
 enum GWMsgEnum{

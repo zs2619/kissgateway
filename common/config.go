@@ -7,12 +7,16 @@ import (
 	"path/filepath"
 )
 
+type ProxyServer struct {
+	Name string   `json:"name"`
+	Addr []string `json:"addrList"`
+}
+
 type WebConfigType struct {
-	LogLevel   string   `json:"logLevel"`
-	ServerPort int      `json:"serverPort"`
-	ServerType string   `json:"serverType"`
-	World      []string `json:"world"`
-	Game       []string `json:"game"`
+	LogLevel            string        `json:"logLevel"`
+	ServerPort          int           `json:"serverPort"`
+	ServerType          string        `json:"serverType"`
+	ProxyServerConfList []ProxyServer `json:"proxyServerList"`
 }
 
 func getConfigRaw(config string) ([]byte, error) {

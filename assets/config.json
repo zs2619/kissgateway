@@ -1,11 +1,19 @@
 {
 	"logLevel": "info",
 	"serverPort": 20000,
-	"serverType": "tcp",
-	"world": [
-		"127.0.0.1:2619"
-	],
-	"game": [
-		"127.0.0.1:2620"
+	"serverType": "ws",
+	"proxyServerList": [
+		{
+			"name": "world",
+			"addrList": [
+				"127.0.0.1:2619"
+			]
+		},
+		{
+			"name": "game",
+			"addrList": [
+				"127.0.0.1:2620"
+			]
+		}
 	]
 }

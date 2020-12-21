@@ -22,7 +22,7 @@ func main() {
 	}
 
 	port := 0
-	portStr := os.Getenv("GATEWAY_CONFIGPATH")
+	portStr := os.Getenv("GATEWAY_SERVERPORT")
 	if len(portStr) == 0 {
 		port = conf.ServerPort
 	} else {
@@ -34,6 +34,10 @@ func main() {
 			return
 		}
 	}
+	// err = gateway.GProxyServerMgr.InitProxyServer()
+	// if err != nil {
+	// 	return
+	// }
 
 	event := kissnet.NewNetEvent()
 	logrus.Info("acceptor start")

@@ -10,7 +10,21 @@
             "request": "launch",
             "mode": "debug",
             "program": "${workspaceFolder}/main.go",
-            "env": {},
+            "env": {
+                "GATEWAY_SERVERPORT": "20000",
+            },
+            "args": [],
+            "showLog": true
+        },
+        {
+            "name": "kiss ws client example",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/example/ws_client.go",
+            "env": {
+                "GATEWAY_SERVERPORT": "20000",
+            },
             "args": [],
             "showLog": true
         },
